@@ -9,14 +9,16 @@ body {
 }
 
 #game {
-  max-height: 400px;
   max-width: 500px;
+  max-height: 400px;
   background-color: #ffffff;
   color: #ffffff;
-  margin-top: 30px;
-  margin-bottom: 0px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 30px auto 0px;
   padding: 10px;
 }
 
+#controls, #stats {
+  border: 1px solid #0a0a23;
+  color: #0a0a23;
+  padding: 5px;
+}
