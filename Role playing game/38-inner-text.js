@@ -1,3 +1,12 @@
+// The innerText property controls the text that appears in an HTML element. For example:
+
+// <p id="info">Demo content</p> 
+// const info = document.querySelector("#info"); 
+// info.innerText = "Hello World"; 
+// The following example would change the text of the p element from Demo content to Hello World.
+
+// When a player clicks your Go to store button, you want to change the buttons and text. Remove the code inside the goStore function and add a line that updates the text of button1 to say "Buy 10 health (10 gold)".
+
 let xp = 0;
 let health = 100;
 let gold = 50;

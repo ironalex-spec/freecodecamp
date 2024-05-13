@@ -1,3 +1,7 @@
+// Using the same syntax, set the onclick properties of button2 and button3 to goCave and fightDragon respectively.
+
+// Once you have done that, open your console and try clicking the buttons on your project.
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -23,7 +27,7 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 function goStore() {
-  button1.innerText = "Buy 10 health (10 gold)";
+  console.log("Going to store.");
 }
 
 function goCave() {

@@ -1,3 +1,9 @@
+// Just like you did with the buttons, create variables for the following ids and use querySelector() to give them the element as a value:
+
+// text, xpText, healthText, goldText, monsterStats, and monsterName.
+
+// Remember to declare these with the const keyword, and name the variables to match the ids.
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -6,7 +12,7 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
-const button1 = document.querySelector('#button1');
+const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
@@ -15,21 +21,3 @@ const healthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
-const monsterHealthText = document.querySelector("#monsterHealth");
-
-// initialize buttons
-button1.onclick = goStore;
-button2.onclick = goCave;
-button3.onclick = fightDragon;
-
-function goStore() {
-  button1.innerText = "Buy 10 health (10 gold)";
-}
-
-function goCave() {
-  console.log("Going to cave.");
-}
-
-function fightDragon() {
-  console.log("Fighting dragon.");
-}

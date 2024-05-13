@@ -1,3 +1,10 @@
+// In the previous project, you learned how to create a function like this:
+
+// function functionName() {
+
+// }
+// Create an empty function named goStore.
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -17,19 +24,6 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
-// initialize buttons
-button1.onclick = goStore;
-button2.onclick = goCave;
-button3.onclick = fightDragon;
-
 function goStore() {
-  button1.innerText = "Buy 10 health (10 gold)";
-}
 
-function goCave() {
-  console.log("Going to cave.");
-}
-
-function fightDragon() {
-  console.log("Fighting dragon.");
 }
