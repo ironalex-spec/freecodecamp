@@ -1,3 +1,5 @@
+// Create three new empty functions called buyHealth, buyWeapon, and goTown.\
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -22,16 +24,6 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
-function goTown() {
-  button1.innerText = "Go to store";
-  button2.innerText = "Go to cave";
-  button3.innerText = "Fight dragon";
-  button1.onclick = goStore;
-  button2.onclick = goCave;
-  button3.onclick = fightDragon;
-  text.innerText = "You are in the town square. You see a sign that says Store.";
-}
-
 function goStore() {
   button1.innerText = "Buy 10 health (10 gold)";
   button2.innerText = "Buy weapon (30 gold)";
@@ -50,10 +42,12 @@ function fightDragon() {
   console.log("Fighting dragon.");
 }
 
-function buyHealth() {
+function buyHealth(){
 
 }
+function buyWeapon(){
 
-function buyWeapon() {
+}
+function goTown(){
 
 }
