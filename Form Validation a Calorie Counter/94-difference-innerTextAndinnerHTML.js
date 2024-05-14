@@ -1,3 +1,7 @@
+// You also need to clear the output element's text. You can do this by setting the innerText property to an empty string.
+
+// The difference between innerText and innerHTML is that innerText will not render HTML elements, but will display the tags and content as raw text.
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');
@@ -92,10 +96,8 @@ function clearForm() {
   }
 
   budgetNumberInput.value = '';
-  output.innerText = '';
-  output.classList.add('hide');
+  output.innerText = "";
 }
 
 addEntryButton.addEventListener("click", addEntry);
 calorieCounter.addEventListener("submit", calculateCalories);
-clearButton.addEventListener('click', clearForm);

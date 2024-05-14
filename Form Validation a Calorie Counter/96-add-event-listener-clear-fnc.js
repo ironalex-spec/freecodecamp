@@ -1,3 +1,7 @@
+// To complete this project, add an event listener to the clearButton button. When the button is clicked, it should call the clearForm function.
+
+// Congratulations! Your project is complete.
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');

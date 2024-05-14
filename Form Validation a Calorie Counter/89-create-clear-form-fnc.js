@@ -1,3 +1,5 @@
+// Your final feature to add is the ability for a user to clear the form. Start by declaring an empty function called clearForm – it should not take any arguments.
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');
@@ -84,18 +86,9 @@ function getCaloriesFromInputs(list) {
   return calories;
 }
 
-function clearForm() {
-  const inputContainers = Array.from(document.querySelectorAll('.input-container'));
-
-  for (const container of inputContainers) {
-    container.innerHTML = '';
-  }
-
-  budgetNumberInput.value = '';
-  output.innerText = '';
-  output.classList.add('hide');
+function clearForm(){
+  
 }
 
 addEntryButton.addEventListener("click", addEntry);
 calorieCounter.addEventListener("submit", calculateCalories);
-clearButton.addEventListener('click', clearForm);

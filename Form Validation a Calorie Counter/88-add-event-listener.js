@@ -1,3 +1,7 @@
+// If you click on your Calculate Remaining Calories button, you'll see that nothing happens. You still need to mount the event listener.
+
+// Add an event listener to your calorieCounter element. The event type should be submit, and the callback function should be calculateCalories.
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');
@@ -84,18 +88,5 @@ function getCaloriesFromInputs(list) {
   return calories;
 }
 
-function clearForm() {
-  const inputContainers = Array.from(document.querySelectorAll('.input-container'));
-
-  for (const container of inputContainers) {
-    container.innerHTML = '';
-  }
-
-  budgetNumberInput.value = '';
-  output.innerText = '';
-  output.classList.add('hide');
-}
-
 addEntryButton.addEventListener("click", addEntry);
-calorieCounter.addEventListener("submit", calculateCalories);
-clearButton.addEventListener('click', clearForm);
+calorieCounter.addEventListener('submit', calculateCalories);

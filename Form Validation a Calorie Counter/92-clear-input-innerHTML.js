@@ -1,3 +1,7 @@
+// It is time for another loop. Create a for...of loop with a variable called container to iterate through the inputContainers array.
+
+// Inside the loop, set the innerHTML property of the container to an empty string. This will clear all of the contents of that input container.
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');
@@ -86,16 +90,11 @@ function getCaloriesFromInputs(list) {
 
 function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container'));
-
   for (const container of inputContainers) {
-    container.innerHTML = '';
+    container.innerHTML = "";
   }
 
-  budgetNumberInput.value = '';
-  output.innerText = '';
-  output.classList.add('hide');
 }
 
 addEntryButton.addEventListener("click", addEntry);
 calorieCounter.addEventListener("submit", calculateCalories);
-clearButton.addEventListener('click', clearForm);

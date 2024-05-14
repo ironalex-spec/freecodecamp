@@ -1,3 +1,5 @@
+// After your loop completes, you need to clear the budgetNumberInput. Set the value property of budgetNumberInput to an empty string.
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');
@@ -90,12 +92,9 @@ function clearForm() {
   for (const container of inputContainers) {
     container.innerHTML = '';
   }
+  budgetNumberInput.value = "";
 
-  budgetNumberInput.value = '';
-  output.innerText = '';
-  output.classList.add('hide');
 }
 
 addEntryButton.addEventListener("click", addEntry);
 calorieCounter.addEventListener("submit", calculateCalories);
-clearButton.addEventListener('click', clearForm);

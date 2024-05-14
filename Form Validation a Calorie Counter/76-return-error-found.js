@@ -1,3 +1,5 @@
+// Your getCaloriesFromInputs function will set the global error flag to true if an invalid input is detected. Add an if statement to your calculateCalories function that checks the truthiness of your global error flag, and if it is truthy then use return to end the function execution.
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');
@@ -49,22 +51,9 @@ function calculateCalories(e) {
   const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs);
   const budgetCalories = getCaloriesFromInputs([budgetNumberInput]);
 
-  if (isError) {
-    return;
+  if(isError){
+    return ;
   }
-
-  const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
-  const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
-  const surplusOrDeficit = remainingCalories < 0 ? 'Surplus' : 'Deficit';
-  output.innerHTML = `
-  <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
-  <hr>
-  <p>${budgetCalories} Calories Budgeted</p>
-  <p>${consumedCalories} Calories Consumed</p>
-  <p>${exerciseCalories} Calories Burned</p>
-  `;
-
-  output.classList.remove('hide');
 }
 
 function getCaloriesFromInputs(list) {
@@ -84,18 +73,4 @@ function getCaloriesFromInputs(list) {
   return calories;
 }
 
-function clearForm() {
-  const inputContainers = Array.from(document.querySelectorAll('.input-container'));
-
-  for (const container of inputContainers) {
-    container.innerHTML = '';
-  }
-
-  budgetNumberInput.value = '';
-  output.innerText = '';
-  output.classList.add('hide');
-}
-
 addEntryButton.addEventListener("click", addEntry);
-calorieCounter.addEventListener("submit", calculateCalories);
-clearButton.addEventListener('click', clearForm);

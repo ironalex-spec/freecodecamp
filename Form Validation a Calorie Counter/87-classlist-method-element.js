@@ -1,3 +1,9 @@
+// Finally, you need to make the #output element visible so the user can see your text. Your output variable is an Element, which has a classList property. This property has a .remove() method, which accepts a string representing the class to remove from the element.
+
+// const paragraphElement = document.getElementById('paragraph');
+// paragraphElement.classList.remove('hide');
+// Use the .remove() method of the output variable's classList property to remove the hide class. Don't forget to place the word hide inside quotes.
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');
@@ -84,18 +90,4 @@ function getCaloriesFromInputs(list) {
   return calories;
 }
 
-function clearForm() {
-  const inputContainers = Array.from(document.querySelectorAll('.input-container'));
-
-  for (const container of inputContainers) {
-    container.innerHTML = '';
-  }
-
-  budgetNumberInput.value = '';
-  output.innerText = '';
-  output.classList.add('hide');
-}
-
 addEntryButton.addEventListener("click", addEntry);
-calorieCounter.addEventListener("submit", calculateCalories);
-clearButton.addEventListener('click', clearForm);
