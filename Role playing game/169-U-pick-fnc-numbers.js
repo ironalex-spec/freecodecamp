@@ -1,3 +1,5 @@
+// Now you can write the logic to run in the loop. Inside your for loop, use the += operator to add to the end of text.innerText. Add the number at index i of the numbers array, using numbers[i]. Then add a new line, using the escape sequence you used earlier.
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -67,7 +69,7 @@ const locations = [
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, easterEgg],
+    "button functions": [goTown, goTown, goTown],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   },
   {
@@ -272,17 +274,5 @@ function pick(guess) {
   text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
   for (let i = 0; i < 10; i++) {
     text.innerText += numbers[i] + "\n";
-  }
-  if (numbers.includes(guess)) {
-    text.innerText += "Right! You win 20 gold!";
-    gold += 20;
-    goldText.innerText = gold;
-  } else {
-    text.innerText += "Wrong! You lose 10 health!";
-    health -= 10;
-    healthText.innerText = health;
-    if (health <= 0) {
-      lose();
-    }
   }
 }

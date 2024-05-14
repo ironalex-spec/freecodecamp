@@ -1,3 +1,5 @@
+// Add another object to your locations array. Set name to "easter egg", set "button text" to an array with the strings "2", "8", and "Go to town square?", set "button functions" to an array with the variables pickTwo, pickEight, and goTown, and text to "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!".
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -67,7 +69,7 @@ const locations = [
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, easterEgg],
+    "button functions": [goTown, goTown, goTown],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   },
   {
@@ -82,12 +84,12 @@ const locations = [
     "button functions": [restart, restart, restart], 
     text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
   },
-  {
-    name: "easter egg",
-    "button text": ["2", "8", "Go to town square?"],
-    "button functions": [pickTwo, pickEight, goTown],
-    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
-  }
+  { 
+    name: "easter egg", 
+    "button text": ["2", "8", "Go to town square?"], 
+    "button functions": [pickTwo, pickEight, goTown], 
+    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!" 
+  },
 ];
 
 // initialize buttons
@@ -265,24 +267,5 @@ function pickEight() {
 }
 
 function pick(guess) {
-  const numbers = [];
-  while (numbers.length < 10) {
-    numbers.push(Math.floor(Math.random() * 11));
-  }
-  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
-  for (let i = 0; i < 10; i++) {
-    text.innerText += numbers[i] + "\n";
-  }
-  if (numbers.includes(guess)) {
-    text.innerText += "Right! You win 20 gold!";
-    gold += 20;
-    goldText.innerText = gold;
-  } else {
-    text.innerText += "Wrong! You lose 10 health!";
-    health -= 10;
-    healthText.innerText = health;
-    if (health <= 0) {
-      lose();
-    }
-  }
+
 }

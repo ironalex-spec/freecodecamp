@@ -1,3 +1,5 @@
+// Now add an else statement. Inside, add "Wrong! You lose 10 health!" to the end of text.innerText. Subtract 10 from health and update healthText.innerText.
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -67,7 +69,7 @@ const locations = [
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, easterEgg],
+    "button functions": [goTown, goTown, goTown],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   },
   {
@@ -281,8 +283,5 @@ function pick(guess) {
     text.innerText += "Wrong! You lose 10 health!";
     health -= 10;
     healthText.innerText = health;
-    if (health <= 0) {
-      lose();
-    }
   }
 }

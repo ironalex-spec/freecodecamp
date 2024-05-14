@@ -1,3 +1,5 @@
+// Inside your while loop, push a random number between 0 and 10 to the end of the numbers array. You can create this random number with Math.floor(Math.random() * 11).
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -67,7 +69,7 @@ const locations = [
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, easterEgg],
+    "button functions": [goTown, goTown, goTown],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   },
   {
@@ -267,22 +269,6 @@ function pickEight() {
 function pick(guess) {
   const numbers = [];
   while (numbers.length < 10) {
-    numbers.push(Math.floor(Math.random() * 11));
-  }
-  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
-  for (let i = 0; i < 10; i++) {
-    text.innerText += numbers[i] + "\n";
-  }
-  if (numbers.includes(guess)) {
-    text.innerText += "Right! You win 20 gold!";
-    gold += 20;
-    goldText.innerText = gold;
-  } else {
-    text.innerText += "Wrong! You lose 10 health!";
-    health -= 10;
-    healthText.innerText = health;
-    if (health <= 0) {
-      lose();
-    }
+    numbers.push(Math.floor(Math.random()*11));
   }
 }

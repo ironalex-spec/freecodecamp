@@ -1,3 +1,15 @@
+// The .includes() method determines if an array contains an element and will return either true or false.
+
+// Here is an example of the .includes() syntax:
+
+// const numbersArray = [1, 2, 3, 4, 5]
+// const number = 3
+
+// if (numbersArray.includes(number)) {
+//   console.log("The number is in the array.")
+// }
+// After your for loop, add an if statement to check if the guess is in the numbers array. You can use the .includes() method to check if the array contains the guess.
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -67,7 +79,7 @@ const locations = [
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, easterEgg],
+    "button functions": [goTown, goTown, goTown],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   },
   {
@@ -273,16 +285,9 @@ function pick(guess) {
   for (let i = 0; i < 10; i++) {
     text.innerText += numbers[i] + "\n";
   }
-  if (numbers.includes(guess)) {
-    text.innerText += "Right! You win 20 gold!";
-    gold += 20;
-    goldText.innerText = gold;
-  } else {
-    text.innerText += "Wrong! You lose 10 health!";
-    health -= 10;
-    healthText.innerText = health;
-    if (health <= 0) {
-      lose();
-    }
+
+  if (numbers.includes(guess)){
+
   }
+
 }

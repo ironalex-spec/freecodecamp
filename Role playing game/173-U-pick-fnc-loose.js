@@ -1,3 +1,5 @@
+// Since you subtracted health from the player, you need to check if the player's health is less than or equal to 0. If it is, call the lose function.
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -67,7 +69,7 @@ const locations = [
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, easterEgg],
+    "button functions": [goTown, goTown, goTown],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   },
   {

@@ -1,3 +1,5 @@
+// Now create the isMonsterHit function. This will return a boolean value (true or false) to be used in your if statement. Return the result of the comparison Math.random() > .2.
+
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -67,7 +69,7 @@ const locations = [
   {
     name: "kill monster",
     "button text": ["Go to town square", "Go to town square", "Go to town square"],
-    "button functions": [goTown, goTown, easterEgg],
+    "button functions": [goTown, goTown, goTown],
     text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
   },
   {
@@ -81,12 +83,6 @@ const locations = [
     "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
     "button functions": [restart, restart, restart], 
     text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
-  },
-  {
-    name: "easter egg",
-    "button text": ["2", "8", "Go to town square?"],
-    "button functions": [pickTwo, pickEight, goTown],
-    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
   }
 ];
 
@@ -204,10 +200,6 @@ function attack() {
       defeatMonster();
     }
   }
-  if (Math.random() <= .1 && inventory.length !== 1) {
-    text.innerText += " Your " + inventory.pop() + " breaks.";
-    currentWeapon--;
-  }
 }
 
 function getMonsterAttackValue(level) {
@@ -216,8 +208,8 @@ function getMonsterAttackValue(level) {
   return hit > 0 ? hit : 0;
 }
 
-function isMonsterHit() {
-  return Math.random() > .2 || health < 20;
+function isMonsterHit(){
+  return Math.random() > .2;
 }
 
 function dodge() {
@@ -250,39 +242,4 @@ function restart() {
   healthText.innerText = health;
   xpText.innerText = xp;
   goTown();
-}
-
-function easterEgg() {
-  update(locations[7]);
-}
-
-function pickTwo() {
-  pick(2);
-}
-
-function pickEight() {
-  pick(8);
-}
-
-function pick(guess) {
-  const numbers = [];
-  while (numbers.length < 10) {
-    numbers.push(Math.floor(Math.random() * 11));
-  }
-  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
-  for (let i = 0; i < 10; i++) {
-    text.innerText += numbers[i] + "\n";
-  }
-  if (numbers.includes(guess)) {
-    text.innerText += "Right! You win 20 gold!";
-    gold += 20;
-    goldText.innerText = gold;
-  } else {
-    text.innerText += "Wrong! You lose 10 health!";
-    health -= 10;
-    healthText.innerText = health;
-    if (health <= 0) {
-      lose();
-    }
-  }
 }
