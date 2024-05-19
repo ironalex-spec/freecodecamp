@@ -1,3 +1,13 @@
+// If the player or computer has won the game, there should be an option to reset the game and play again.
+
+// Complete the resetGame function that accomplishes the following:
+
+// Resets the player and computer scores to 0.
+// Updates the playerScoreSpanElement and computerScoreSpanElement to display the new scores.
+// Hides the resetGameBtn button.
+// Shows the optionsContainer so the player can play again.
+// Sets the roundResultsMsg and winnerMsgElement to empty strings.
+// Once you apply those changes, you will have completed the Rock, Paper, Scissors game!
 
 function getRandomComputerResult() {
     const options = ["Rock", "Paper", "Scissors"];
