@@ -1,3 +1,4 @@
+// Within the callback function, use the removeAttribute() method to remove the "aria-current" attribute. This will remove the attribute for each of the songs.
 
 const playlistSongs = document.getElementById("playlist-songs");
 const playButton = document.getElementById("play");
@@ -99,7 +100,6 @@ const playSong = (id) => {
   userData.currentSong = song;
   playButton.classList.add("playing");
 
-  highlightCurrentSong();
   audio.play();
 };
 
@@ -140,8 +140,6 @@ const highlightCurrentSong = () => {
   playlistSongElements.forEach((songEl) => {
     songEl.removeAttribute("aria-current");
   });
-
-  if (songToHighlight) songToHighlight.setAttribute("aria-current", "true");
 };
 
 const renderSongs = (array) => {

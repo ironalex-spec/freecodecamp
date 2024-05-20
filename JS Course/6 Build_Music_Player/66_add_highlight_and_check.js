@@ -1,3 +1,6 @@
+// Inside the playSong function, call the highlightCurrentSong function.
+
+// After that, play around with the control buttons to see how the highlightCurrentSong function works.
 
 const playlistSongs = document.getElementById("playlist-songs");
 const playButton = document.getElementById("play");

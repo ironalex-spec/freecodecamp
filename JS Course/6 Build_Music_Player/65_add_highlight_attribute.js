@@ -1,3 +1,6 @@
+// Now you need to add the attribute back to the currently playing song.
+
+// Create an if statement with the condition songToHighlight. For the statement, use setAttribute on songToHighlight to pass in "aria-current" and "true" as the first and second arguments.
 
 const playlistSongs = document.getElementById("playlist-songs");
 const playButton = document.getElementById("play");
@@ -99,7 +102,6 @@ const playSong = (id) => {
   userData.currentSong = song;
   playButton.classList.add("playing");
 
-  highlightCurrentSong();
   audio.play();
 };
 
@@ -140,8 +142,10 @@ const highlightCurrentSong = () => {
   playlistSongElements.forEach((songEl) => {
     songEl.removeAttribute("aria-current");
   });
-
-  if (songToHighlight) songToHighlight.setAttribute("aria-current", "true");
+  
+  if (songToHighlight) {
+    songToHighlight.setAttribute("aria-current", "true");
+  }
 };
 
 const renderSongs = (array) => {

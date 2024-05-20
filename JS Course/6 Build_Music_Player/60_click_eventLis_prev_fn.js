@@ -1,3 +1,4 @@
+// Add a "click" event listener to the previousButton element, then pass in playPreviousSong as the second argument.
 
 const playlistSongs = document.getElementById("playlist-songs");
 const playButton = document.getElementById("play");
@@ -99,7 +100,6 @@ const playSong = (id) => {
   userData.currentSong = song;
   playButton.classList.add("playing");
 
-  highlightCurrentSong();
   audio.play();
 };
 
@@ -111,6 +111,7 @@ const pauseSong = () => {
 };
 
 const playNextSong = () => {
+
   if (userData?.currentSong === null) {
     playSong(userData?.songs[0].id);
   } else {
@@ -121,7 +122,7 @@ const playNextSong = () => {
   }
 };
 
-const playPreviousSong = () => {
+const playPreviousSong = () =>{
    if (userData?.currentSong === null) return;
    else {
     const currentSongIndex = getCurrentSongIndex();
@@ -129,19 +130,6 @@ const playPreviousSong = () => {
 
     playSong(previousSong.id);
    }
-};
-
-const highlightCurrentSong = () => {
-  const playlistSongElements = document.querySelectorAll(".playlist-song");
-  const songToHighlight = document.getElementById(
-    `song-${userData?.currentSong?.id}`
-  );
-
-  playlistSongElements.forEach((songEl) => {
-    songEl.removeAttribute("aria-current");
-  });
-
-  if (songToHighlight) songToHighlight.setAttribute("aria-current", "true");
 };
 
 const renderSongs = (array) => {
@@ -180,7 +168,7 @@ pauseButton.addEventListener("click",  pauseSong);
 
 nextButton.addEventListener("click", playNextSong);
 
-previousButton.addEventListener("click", playPreviousSong);
+previousButton.addEventListener("click",playPreviousSong);
 
 const sortSongs = () => {
   userData?.songs.sort((a,b) => {
